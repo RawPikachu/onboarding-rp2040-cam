@@ -1,3 +1,6 @@
+# cmake
+out/
+
 # Prerequisites
 *.d
 
