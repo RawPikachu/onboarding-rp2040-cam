@@ -26,7 +26,7 @@ void core1_entry() {
     UDOUBLE ImageSize = LCD_1IN14_V2_HEIGHT * LCD_1IN14_V2_WIDTH;
     UWORD* BlackImage;
     // question: why do we need to explicitly cast here?
-    if ((BlackImage = (UWORD*)malloc(ImageSize)) == NULL) {
+    if ((BlackImage = malloc(ImageSize)) == NULL) {
         printf("Failed to allocate D: ...\r\n");
         exit(0);
     }
@@ -39,7 +39,7 @@ void core1_entry() {
     else
         printf("Success: Core 1 received acknowledgement from core 0!\n");
 
-    // again, why not cast earlier, also why does this only take a byte for the addressing.
+    // why does this only take a pointer to UBYTEs?
     Paint_NewImage((UBYTE*) BlackImage, LCD_1IN14_V2_WIDTH, LCD_1IN14_V2_HEIGHT, 0, WHITE);
     Paint_SetScale(65);
     Paint_SetRotate(ROTATE_0);
