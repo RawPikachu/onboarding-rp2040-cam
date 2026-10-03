@@ -69,7 +69,7 @@ void core1_entry() {
 int main() {
     stdio_init_all();
     vreg_set_voltage(VREG_VOLTAGE_1_10); // setting voltage to 1.1V
-    set_sys_clock_hz(250000, true); // 250MHz
+    set_sys_clock_khz(250000, true); // 250MHz
 
     // trying something here.
     for (int loops = 20; loops >= 0 && !tud_cdc_connected(); --loops) {
